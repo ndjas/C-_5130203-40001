@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1748583676 source:c:\users\kemaj\desktop\final_pabota\main.cpp
+	<iostream>
+	"Client.h"
+	"Wallet.h"
+
+1748585364 source:c:\users\kemaj\desktop\final_pabota\client.cpp
+	<fstream>
+	<random>
+	<iostream>
+	<string>
+	<chrono>
+	<functional>
+	<iomanip>
+	<sstream>
+	"Client.h"
+	"Wallet.h"
+
+1748583710 c:\users\kemaj\desktop\final_pabota\client.h
+	<string>
+
+1748585554 source:c:\users\kemaj\desktop\final_pabota\wallet.cpp
+	<fstream>
+	<random>
+	<iostream>
+	<string>
+	<vector>
+	<chrono>
+	<functional>
+	<iomanip>
+	<sstream>
+	"Wallet.h"
+
+1748585627 c:\users\kemaj\desktop\final_pabota\wallet.h
+	<string>
+	<vector>
+
+1748576851 source:c:\users\kemaj\desktop\final_pabota\clientbst.cpp
+
+1748576402 source:c:\users\kemaj\desktop\final_pabota\clientnode.cpp
+	"clientnode.h"
+
+1748575865 c:\users\kemaj\desktop\final_pabota\clientnode.h
+	"Client.h"
+	<string>
+
