@@ -31,7 +31,7 @@ void deposit();
 void withdraw();
 int deposit(std::string account, double montant);
 int withdraw(std::string account, double montant);
-std::vector<int> find_wallet(std::string walletId);
+std::vector<std::string> find_wallet(std::string walletId);
 void transaction();
 std::vector<std::string> split(std::string s, std::string delimiter);
 std::vector<int> find_wallet();

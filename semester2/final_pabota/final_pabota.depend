@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1748583676 source:c:\users\kemaj\desktop\final_pabota\main.cpp
+1748592563 source:c:\users\kemaj\desktop\final_pabota\main.cpp
 	<iostream>
 	"Client.h"
 	"Wallet.h"
 
-1748585364 source:c:\users\kemaj\desktop\final_pabota\client.cpp
+1748591269 source:c:\users\kemaj\desktop\final_pabota\client.cpp
 	<fstream>
 	<random>
 	<iostream>
@@ -19,7 +19,7 @@
 1748583710 c:\users\kemaj\desktop\final_pabota\client.h
 	<string>
 
-1748585554 source:c:\users\kemaj\desktop\final_pabota\wallet.cpp
+1748592078 source:c:\users\kemaj\desktop\final_pabota\wallet.cpp
 	<fstream>
 	<random>
 	<iostream>
@@ -31,7 +31,7 @@
 	<sstream>
 	"Wallet.h"
 
-1748585627 c:\users\kemaj\desktop\final_pabota\wallet.h
+1748591582 c:\users\kemaj\desktop\final_pabota\wallet.h
 	<string>
 	<vector>
 

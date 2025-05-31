@@ -133,7 +133,7 @@ return {0,-1};
 
 };
 
-std::vector<int> find_wallet(std::string walletId){
+std::vector<std::string> find_wallet(std::string walletId){
     int compt=0;
     std::string delimiter="#";
 
@@ -145,7 +145,7 @@ std::vector<int> find_wallet(std::string walletId){
                 std::vector <std::string> bk_prt = split(line,delimiter);
                 if(bk_prt[0]==walletId){
                     std::cout<<"find"<<std::endl;
-                    return {1,compt};
+                    return {"1",std::to_string(compt),bk_prt[3]};
                 }else{
                     compt+=1;
                     continue;
@@ -154,7 +154,7 @@ std::vector<int> find_wallet(std::string walletId){
             }
     }
 
-return {0,-1};
+return {"0","-1",""};
 
 };
 
@@ -201,19 +201,19 @@ void deposit(){
 int deposit(std::string account, double amount){
     int did=0;
     int compt=0;
-    std::vector <int> vc_wal=find_wallet(account);
+    std::vector <std::string> vc_wal=find_wallet(account);
     std::vector <std::string> k_line;
     std::string delimiter="#";
     std::string nwBloc="";
 
-    if(vc_wal[0]){
+    if(std::stoi(vc_wal[0])){
         std::ifstream fichier_wallet(nomFichier_wallet.c_str());
         if(fichier_wallet){
             std::string line;
             while(getline(fichier_wallet, line) && line!="" ) //Tant qu'on n'est pas à la fin, on lit
                 {
 
-                if(vc_wal[1]==compt){
+                if(std::stoi(vc_wal[1])==compt){
                     k_line = split(line,delimiter);
                     k_line[2]=std::to_string(amount + std::stod(k_line[2]));
                     did=1;
@@ -285,25 +285,25 @@ void withdraw(){
 int withdraw(std::string account, double amount){
     int did=0;
     int compt=0;
-    std::vector <int> vc_wal=find_wallet(account);
+    std::vector <std::string> vc_wal=find_wallet(account);
     std::vector <std::string> k_line;
     std::string delimiter="#";
     std::string nwBloc="";
 
-    if(vc_wal[0]){
+    if(std::stoi(vc_wal[0])){
         std::ifstream fichier_wallet(nomFichier_wallet.c_str());
         if(fichier_wallet){
             std::string line;
             while(getline(fichier_wallet, line) && line!="" ) //Tant qu'on n'est pas à la fin, on lit
                 {
 
-                if(vc_wal[1]==compt){
+                if(std::stoi(vc_wal[1])==compt){
                     k_line = split(line,delimiter);
                     if(std::stod(k_line[2])<=amount){
                         std::cout<<"not enough money"<<std::endl;
                         break;
                     }else{
-                        k_line[2]=std::to_string(std::stod(k_line[2]) - amount);
+                        k_line[2]=std::to_string(std::stod(k_line[2]) - amount-(std::stod(vc_wal[2])*amount));
                         did=1;
                     }
 

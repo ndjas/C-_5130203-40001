@@ -87,7 +87,8 @@ void Client::copyClient(Client a){
 void newClient(){
     std::ofstream monFlux(nomFichier_client.c_str(),std::ios::app);
     std::ofstream monFlux_wallet(nomFichier_wallet.c_str(),std::ios::app);
-
+    std::string com_wallet;
+    std::string line_wallet;
     std::string name;
     char ask;
     std::string walletId;
@@ -136,6 +137,7 @@ void newClient(){
         }else{
             goto type_client;
         }
+        com_wallet=std::to_string(client.pourcentage); //get pourcentage
         //client.setClient(id_c,name,wallet);
         //client.getClient();
         std::cout<<"the wallet "<<walletId<<" correctly created for the client "<< id_c <<std::endl;
@@ -147,9 +149,11 @@ void newClient(){
     }else{
         std::cout<<"incorrect choice"<<std::endl;
     }
-
+    line_wallet=wallet.mergWallet();
+    line_wallet+="#"+com_wallet;
     if(monFlux)
     {
+
         monFlux << client.mergClient() << std::endl;
     }
     else
@@ -158,7 +162,8 @@ void newClient(){
     }
      if(monFlux_wallet)
     {
-        monFlux_wallet << wallet.mergWallet() << std::endl;
+        //monFlux_wallet << wallet.mergWallet() << std::endl;
+        monFlux_wallet << line_wallet << std::endl;
     }
     else
     {

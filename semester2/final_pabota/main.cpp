@@ -21,7 +21,7 @@ int main()
     std::cout << "------------------------------------------------------" <<std::endl;
     std::cout << " " <<std::endl;
     first_menu:
-    std::cout << "1- Clien Management " <<std::endl;
+    std::cout << "1- Client Management " <<std::endl;
     std::cout << "2- Operation Management " <<std::endl;
     std::cout << "3- Wallet Management" <<std::endl;
     //cout << "4- Order Détail Management" <<endl;
@@ -102,6 +102,7 @@ int main()
     }
     else if(choice==3){
         std::cout<<"this part is in construction\n"<<std::endl;
+        goto first_menu;
     }
     else if(choice==4 ){
         break;
